@@ -12,6 +12,9 @@ var canvasHeight = document.getElementById('canvasHeight');
 var canvasWidth = document.getElementById('canvasWidth');
 var circleBrush = document.getElementById('brushCircle');
 var squareBrush = document.getElementById('brushSquare');
+var colorPallet = document.getElementById('colorPallet');
+var save = document.getElementById('save');
+var load = document.getElementById('load');
 var paintId = 0;
 var clickCheck;
 var paintColor = 'black';
@@ -24,9 +27,9 @@ function painting(e) {
         var posX = e.clientX;
         var posY = e.clientY;
         var paint = document.createElement('div')
-        paint.className = `${brushSize} ${paintColor} ${brushShape}`;
+        paint.className = `${brushSize} ${brushShape}`;
         paint.id = paintId;
-        paint.style = `left: ${posX}px; top: ${posY}px`;
+        paint.style = `left: ${posX}px; top: ${posY}px; background-color: ${paintColor};`;
         canvas.appendChild(paint);
     }
 }
@@ -41,22 +44,13 @@ canvas.addEventListener('mouseup',function() {
     clickCheck = 0;
 })
 
-// function changeColor() {
-//     var colors = document.getElementsByClassName('color');
-//     for (var i = 0; i < colors.length; i++) {
-//         console.log(colors.className);
-//     }
-//    paintColor = 
-// }
-// changeColor();
-
 function changeRed() {paintColor = 'red';}
 function changeGreen() {paintColor = 'green';}
 function changeBlue() {paintColor = 'blue';}
 function changeYellow() {paintColor = 'yellow';}
 function changePurple() {paintColor = 'purple';}
 function changeBlack() {paintColor = 'black';}
-function eraser() {paintColor = 'eraser'}
+function eraser() {paintColor = 'blanchedalmond'}
 function clearScreen() {
     for (var i = 1; i <= paintId; i++) {
         var remove = document.getElementById(`${i}`);
@@ -79,6 +73,18 @@ function changeBrushCircle() {
 function changeBrushSquare() {
     brushShape = 'square';
 }
+function colorPicking() {
+    paintColor = colorPallet.value;
+}
+function saving() {
+    localStorage.clear();
+    localStorage.save;
+    localStorage.setItem("save",canvas.innerHTML);
+}
+function loading() {
+    canvas.innerHTML = localStorage.getItem('save');
+    localStorage.clear();
+}
 
 redColor.addEventListener('click',changeRed);
 greenColor.addEventListener('click',changeGreen);
@@ -93,3 +99,6 @@ canvasHeight.addEventListener('change',changeCanvasSize);
 canvasWidth.addEventListener('change',changeCanvasSize);
 circleBrush.addEventListener('click',changeBrushCircle);
 squareBrush.addEventListener('click',changeBrushSquare);
+colorPallet.addEventListener('change',colorPicking);
+save.addEventListener('click',saving);
+load.addEventListener('click',loading);
