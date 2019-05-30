@@ -21,7 +21,18 @@
             <div class="color purple"></div>
             <div class="color black"></div>
             <div class="feature eraser"></div>
-            <div class="feature clear">Clear</div>
+            <button class="feature clear">Clear</button>
+            <select name="brushSize" class="feature brushsize" id="brushSize">
+                <option value="small">Small</option>
+                <option value="medium" selected>Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <label for="canvasHeight">Height</label>
+            <input type="number" name="canvasHeight" id="canvasHeight" class="canvasSize" value="500" min="100" max="1000">
+            <label for="canvasWidth">Width</label>
+            <input type="number" name="canvasWidth" id="canvasWidth" class="canvasSize" value="500" min="100" max="1000">
+            <button id="brushCircle" class="feature">circle</button>
+            <button id="brushSquare" class="feature">square</button>
         </div>
     </div>
 

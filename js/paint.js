@@ -7,9 +7,16 @@ var purpleColor = document.querySelector('.purple');
 var blackColor = document.querySelector('.black');
 var eraserFeature = document.querySelector('.eraser');
 var clearFeature = document.querySelector('.clear');
+var brushSizeElement = document.getElementById('brushSize');
+var canvasHeight = document.getElementById('canvasHeight');
+var canvasWidth = document.getElementById('canvasWidth');
+var circleBrush = document.getElementById('brushCircle');
+var squareBrush = document.getElementById('brushSquare');
 var paintId = 0;
 var clickCheck;
 var paintColor = 'black';
+var brushSize = 'medium';
+var brushShape = 'circle';
 
 function painting(e) {
     if (clickCheck === 1) {
@@ -17,7 +24,7 @@ function painting(e) {
         var posX = e.clientX;
         var posY = e.clientY;
         var paint = document.createElement('div')
-        paint.className = `painting ${paintColor}`;
+        paint.className = `${brushSize} ${paintColor} ${brushShape}`;
         paint.id = paintId;
         paint.style = `left: ${posX}px; top: ${posY}px`;
         canvas.appendChild(paint);
@@ -57,6 +64,21 @@ function clearScreen() {
     }
     paintId = 0;
 }
+function brushSizeSelection() {
+    var selection = brushSizeElement.options[brushSizeElement.selectedIndex].value;
+    brushSize = selection;
+}
+function changeCanvasSize() {
+    var canvasHeightValue = document.getElementById('canvasHeight').value;
+    var canvasWidthValue = document.getElementById('canvasWidth').value;
+    canvas.style = `height: ${canvasHeightValue}px; width: ${canvasWidthValue}px;`
+}
+function changeBrushCircle() {
+    brushShape = 'circle';
+}
+function changeBrushSquare() {
+    brushShape = 'square';
+}
 
 redColor.addEventListener('click',changeRed);
 greenColor.addEventListener('click',changeGreen);
@@ -66,3 +88,8 @@ purpleColor.addEventListener('click',changePurple);
 blackColor.addEventListener('click',changeBlack);
 eraserFeature.addEventListener('click',eraser);
 clearFeature.addEventListener('click',clearScreen);
+brushSizeElement.addEventListener('click',brushSizeSelection);
+canvasHeight.addEventListener('change',changeCanvasSize);
+canvasWidth.addEventListener('change',changeCanvasSize);
+circleBrush.addEventListener('click',changeBrushCircle);
+squareBrush.addEventListener('click',changeBrushSquare);
