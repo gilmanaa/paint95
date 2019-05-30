@@ -83,7 +83,6 @@ function saving() {
 }
 function loading() {
     canvas.innerHTML = localStorage.getItem('save');
-    localStorage.clear();
 }
 
 redColor.addEventListener('click',changeRed);

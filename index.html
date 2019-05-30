@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/paint.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Paint 95</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="canvas"></div>
         <div class="palet">
             <div class="color red"></div>
             <div class="color green"></div>
@@ -21,25 +20,35 @@
             <div class="color purple"></div>
             <div class="color black"></div>
             <div class="feature eraser"></div>
-            <button class="feature clear">Clear</button>
+            <div class="feature">
+                <button class="feature clear">Clear</button>
+            </div>
             <select name="brushSize" class="feature brushsize" id="brushSize">
                 <option value="small">Small</option>
                 <option value="medium" selected>Medium</option>
                 <option value="large">Large</option>
-            </select>
-            <label for="canvasHeight">Height</label>
-            <input type="number" name="canvasHeight" id="canvasHeight" class="canvasSize" value="500" min="100" max="1000">
-            <label for="canvasWidth">Width</label>
-            <input type="number" name="canvasWidth" id="canvasWidth" class="canvasSize" value="500" min="100" max="1000">
-            <button id="brushCircle" class="feature">circle</button>
-            <button id="brushSquare" class="feature">square</button>
-            <label for="colorPallet">Color Pallet</label>
-            <input type="color" id="colorPallet">
+            </select> <br>
+            <div>
+                <label for="canvasHeight">Height</label>
+                <input type="number" name="canvasHeight" id="canvasHeight" class="canvasSize" value="500" min="100"
+                    max="1000">
+            </div>
+            <div>
+                <label for="canvasWidth">Width</label>
+                <input type="number" name="canvasWidth" id="canvasWidth" class="canvasSize" value="500" min="100"
+                    max="1000">
+            </div>
+            <button id="brushCircle" class="feature"><i class="fa fa-circle fa-2x"></i></button>
+            <button id="brushSquare" class="feature"><i class="fa fa-square fa-2x"></i></button>
+            <div>
+                <label for="colorPallet">Color Pallet</label>
+                <input type="color" id="colorPallet">
+            </div>
             <button id="save" class="feature">Save</button>
             <button id="load" class="feature">Load</button>
         </div>
+        <div class="canvas"></div>
     </div>
-
     <script src="./js/paint.js"></script>
 </body>
 

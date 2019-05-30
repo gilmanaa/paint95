@@ -1,9 +1,10 @@
 body {
     margin: 0px;
+    background-image: url(../images/color_bg.jpg);
+    background-size: cover;
 }
 .container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -11,11 +12,19 @@ body {
 .canvas {
     height: 500px;
     width: 500px;
-    background-color: blanchedalmond; 
+    background-color: blanchedalmond;
+    border: 5px solid white;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, .9);
 }
 .palet {
-    background-color: silver;
-    display: flex;
+    background-color: rgba(137, 43, 226, 0.8);
+    width: 125px;
+    margin-right: 50px;
+    border: 2px solid white;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, .9);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    text-align: center;
 }
 .color {
     display: inline-block;
@@ -25,21 +34,27 @@ body {
 }
 .red {
     background-color: red;
+    border: 1px solid white;
 }
 .green {
     background-color: green;
+    border: 1px solid white;
 }
 .blue {
     background-color: blue;
+    border: 1px solid white;
 }
 .yellow {
     background-color: yellow;
+    border: 1px solid white;
 }
 .purple {
     background-color: purple;
+    border: 1px solid white;
 }
 .black {
     background-color: black;
+    border: 1px solid white;
 }
 .eraser {
     background-color: blanchedalmond;
@@ -47,6 +62,8 @@ body {
 .feature.eraser {
     background-image: url(../images/eraser.jpg);
     background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
 }
 .feature {
     display: inline-block;
@@ -55,14 +72,16 @@ body {
     height: 50px;
     background-color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
+    border: 1px solid white;
 }
 .feature.brushsize {
     width: 70px;
 }
 .feature.clear {
-    vertical-align: center;
+    display: inline-block;
+    vertical-align: middle;
 }
 .canvasSize {
     width: 50px;
