@@ -16,6 +16,9 @@ body {
     border: 5px solid white;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, .9);
 }
+.canvas:hover {
+    cursor: url(../images/brush.png), crosshair;
+}
 .palet {
     background-color: rgba(137, 43, 226, 0.8);
     width: 125px;
@@ -78,6 +81,7 @@ body {
 }
 .feature.brushsize {
     width: 70px;
+    height: 20px;
 }
 .feature.clear {
     display: inline-block;
@@ -107,4 +111,13 @@ body {
 }
 .square {
     border-radius: 0%;
+}
+@media screen and (max-width: 500px) {
+    .canvas {
+        height: 90vh;
+        width: 50vw;
+    }
+    .palet {
+        margin-right: 10px;
+    }
 }

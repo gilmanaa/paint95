@@ -52,11 +52,7 @@ function changePurple() {paintColor = 'purple';}
 function changeBlack() {paintColor = 'black';}
 function eraser() {paintColor = 'blanchedalmond'}
 function clearScreen() {
-    for (var i = 1; i <= paintId; i++) {
-        var remove = document.getElementById(`${i}`);
-        canvas.removeChild(remove);
-    }
-    paintId = 0;
+    canvas.innerHTML = "";
 }
 function brushSizeSelection() {
     var selection = brushSizeElement.options[brushSizeElement.selectedIndex].value;

@@ -13,21 +13,34 @@
 <body>
     <div class="container">
         <div class="palet">
+            Colors <br>
             <div class="color red"></div>
             <div class="color green"></div>
             <div class="color blue"></div>
             <div class="color yellow"></div>
             <div class="color purple"></div>
             <div class="color black"></div>
+            <div>
+                <label for="colorPallet">Color Pallet</label>
+                <input type="color" id="colorPallet">
+            </div>
+            Tools <br>
             <div class="feature eraser"></div>
             <div class="feature">
                 <button class="feature clear">Clear</button>
             </div>
+            <button id="save" class="feature">Save</button>
+            <button id="load" class="feature">Load</button>
+            Brush Size <br>
             <select name="brushSize" class="feature brushsize" id="brushSize">
                 <option value="small">Small</option>
                 <option value="medium" selected>Medium</option>
                 <option value="large">Large</option>
             </select> <br>
+            Brush Shape <br>
+            <button id="brushCircle" class="feature"><i class="fa fa-circle fa-2x"></i></button>
+            <button id="brushSquare" class="feature"><i class="fa fa-square fa-2x"></i></button>
+            Canvas Dimensions <br>
             <div>
                 <label for="canvasHeight">Height</label>
                 <input type="number" name="canvasHeight" id="canvasHeight" class="canvasSize" value="500" min="100"
@@ -38,14 +51,6 @@
                 <input type="number" name="canvasWidth" id="canvasWidth" class="canvasSize" value="500" min="100"
                     max="1000">
             </div>
-            <button id="brushCircle" class="feature"><i class="fa fa-circle fa-2x"></i></button>
-            <button id="brushSquare" class="feature"><i class="fa fa-square fa-2x"></i></button>
-            <div>
-                <label for="colorPallet">Color Pallet</label>
-                <input type="color" id="colorPallet">
-            </div>
-            <button id="save" class="feature">Save</button>
-            <button id="load" class="feature">Load</button>
         </div>
         <div class="canvas"></div>
     </div>
