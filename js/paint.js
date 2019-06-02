@@ -43,13 +43,9 @@ canvas.addEventListener('mousedown',function() {
 canvas.addEventListener('mouseup',function() {
     clickCheck = 0;
 })
-
-function changeRed() {paintColor = 'red';}
-function changeGreen() {paintColor = 'green';}
-function changeBlue() {paintColor = 'blue';}
-function changeYellow() {paintColor = 'yellow';}
-function changePurple() {paintColor = 'purple';}
-function changeBlack() {paintColor = 'black';}
+function changeColor() {
+    paintColor = this.id;
+}
 function eraser() {paintColor = 'blanchedalmond'}
 function clearScreen() {
     canvas.innerHTML = "";
@@ -81,12 +77,12 @@ function loading() {
     canvas.innerHTML = localStorage.getItem('save');
 }
 
-redColor.addEventListener('click',changeRed);
-greenColor.addEventListener('click',changeGreen);
-blueColor.addEventListener('click',changeBlue);
-yellowColor.addEventListener('click',changeYellow);
-purpleColor.addEventListener('click',changePurple);
-blackColor.addEventListener('click',changeBlack);
+redColor.addEventListener('click',changeColor);
+greenColor.addEventListener('click',changeColor);
+blueColor.addEventListener('click',changeColor);
+yellowColor.addEventListener('click',changeColor);
+purpleColor.addEventListener('click',changeColor);
+blackColor.addEventListener('click',changeColor);
 eraserFeature.addEventListener('click',eraser);
 clearFeature.addEventListener('click',clearScreen);
 brushSizeElement.addEventListener('click',brushSizeSelection);
